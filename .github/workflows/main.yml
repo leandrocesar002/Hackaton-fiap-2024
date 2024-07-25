@@ -1,5 +1,5 @@
 ---
-name: Build and Push Java Image to AWS 
+name: Build and Push Java Image to AWS
 on:
   push:
     branches: [ master ]
