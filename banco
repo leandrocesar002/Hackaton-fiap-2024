@@ -1,0 +1,42 @@
+CREATE TABLE medicos (
+    id UUID PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    crm VARCHAR(20) UNIQUE NOT NULL,
+    especialidade VARCHAR(100),
+    avaliacao FLOAT,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE pacientes (
+    id UUID PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(11) UNIQUE NOT NULL,
+    data_nascimento DATE,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE agendamentos (
+    id UUID PRIMARY KEY,
+    medico_id UUID REFERENCES medicos(id),
+    paciente_id UUID REFERENCES pacientes(id),
+    data_hora TIMESTAMP NOT NULL,
+    status ENUM('AGENDADO', 'CANCELADO', 'COMPLETADO') NOT NULL,
+    valor DECIMAL(10, 2),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE consultas (
+    id UUID PRIMARY KEY,
+    agendamento_id UUID REFERENCES agendamentos(id),
+    link_consulta VARCHAR(255),
+    duracao INTEGER,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
