@@ -26,10 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/auth/**").permitAll()
-                .antMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
-                .antMatchers("/api/medicos/**").hasRole("MEDICO")
-                .antMatchers("/api/pacientes/**").hasRole("PACIENTE")
+                .antMatchers("/api/auth/**").permitAll() // Permitir todas as ações de autenticação
+                .antMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll() // Permitir acesso ao Swagger UI
+                .antMatchers("/api/medicos").permitAll() // Permitir cadastro de médicos
+                .antMatchers("/api/pacientes").permitAll() // Permitir cadastro de pacientes
+                .antMatchers("/api/consultas/**", "/api/prontuarios/**", "/api/agendamentos/**").authenticated() // Requer autenticação para consultas, prontuários e agendamentos
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
