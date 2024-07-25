@@ -2,7 +2,7 @@
 name: Build and Push Java Image to AWS
 on:
   push:
-    branches: [ master ]
+    branches: [ production ]
 jobs:
   build-and-push:
     name: Build and Push to ECR
