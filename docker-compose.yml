@@ -22,5 +22,5 @@ services:
       - telemedicina-network
 
 networks:
-  lanchonete-network:
+  telemedicina-network:
     driver: bridge
