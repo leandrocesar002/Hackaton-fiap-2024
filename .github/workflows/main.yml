@@ -22,19 +22,18 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-
-
     - name: Automatic Tagging of Releases
       id: increment-git-tag
       run: |
-        bash ./git_update.sh -v major
+        TAG=$(bash ./build/git_update.sh -v major)
+        echo "::set-output name=git-tag::$TAG"
 
     - name: Build, Tag, and Push the Image to Amazon ECR
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: sonarqube
-        IMAGE_TAG: ${{ steps.outputs.git-tag }}
+        IMAGE_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
