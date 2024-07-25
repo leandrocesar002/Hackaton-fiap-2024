@@ -22,9 +22,6 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Debug Directory
-      run: |
-        ls -l ./build
 
     - name: Automatic Tagging of Releases
       id: increment-git-tag
