@@ -37,6 +37,7 @@ public class PacienteRepositoryAdapter implements PacienteRepositoryPort {
     public void deleteById(UUID id) {
         pacienteJpaRepository.deleteById(id);
     }
+
     @Override
     public Paciente findByEmail(String email) {
         return pacienteJpaRepository.findByEmail(email);

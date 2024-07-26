@@ -37,6 +37,7 @@ public class MedicoRepositoryAdapter implements MedicoRepositoryPort {
     public void deleteById(UUID id) {
         medicoJpaRepository.deleteById(id);
     }
+
     @Override
     public Medico findByEmail(String email) {
         return medicoJpaRepository.findByEmail(email);

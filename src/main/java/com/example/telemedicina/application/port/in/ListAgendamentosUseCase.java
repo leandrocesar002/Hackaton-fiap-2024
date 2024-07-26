@@ -5,5 +5,7 @@ import com.example.telemedicina.domain.Agendamento;
 import java.util.List;
 
 public interface ListAgendamentosUseCase {
-    List<Agendamento> listarAgendamentos();
+    List<Agendamento> listarAgendamentosPorMedico(Long medicoId);
+
+    List<Agendamento> listarAgendamentosPorPaciente(Long pacienteId);
 }
