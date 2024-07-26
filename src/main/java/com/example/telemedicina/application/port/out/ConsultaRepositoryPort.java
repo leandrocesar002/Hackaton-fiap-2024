@@ -7,7 +7,10 @@ import java.util.UUID;
 
 public interface ConsultaRepositoryPort {
     Consulta save(Consulta consulta);
+
     List<Consulta> findAll();
+
     Consulta findById(UUID id);
+
     void deleteById(UUID id);
 }

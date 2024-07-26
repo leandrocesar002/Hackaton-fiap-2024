@@ -7,7 +7,10 @@ import java.util.UUID;
 
 public interface ProntuarioRepositoryPort {
     Prontuario save(Prontuario prontuario);
+
     List<Prontuario> findAll();
+
     Prontuario findById(UUID id);
+
     void deleteById(UUID id);
 }

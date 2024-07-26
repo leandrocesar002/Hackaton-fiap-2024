@@ -6,17 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class AgendamentoRepositoryAdapter implements AgendamentoRepositoryPort {
 
-    private final AgendamentoJpaRepository agendamentoJpaRepository;
-
     @Autowired
-    public AgendamentoRepositoryAdapter(AgendamentoJpaRepository agendamentoJpaRepository) {
-        this.agendamentoJpaRepository = agendamentoJpaRepository;
-    }
+    private AgendamentoJpaRepository agendamentoJpaRepository;
 
     @Override
     public Agendamento save(Agendamento agendamento) {
@@ -24,17 +19,17 @@ public class AgendamentoRepositoryAdapter implements AgendamentoRepositoryPort {
     }
 
     @Override
-    public List<Agendamento> findAll() {
-        return agendamentoJpaRepository.findAll();
+    public List<Agendamento> findByMedicoId(Long medicoId) {
+        return agendamentoJpaRepository.findByMedicoId(medicoId);
     }
 
     @Override
-    public Agendamento findById(UUID id) {
+    public List<Agendamento> findByPacienteId(Long pacienteId) {
+        return agendamentoJpaRepository.findByPacienteId(pacienteId);
+    }
+
+    @Override
+    public Agendamento findById(Long id) {
         return agendamentoJpaRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public void deleteById(UUID id) {
-        agendamentoJpaRepository.deleteById(id);
     }
 }
