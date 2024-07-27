@@ -1,4 +1,4 @@
-<h1 align="center">TechChallenge Fiap - Restaurante</h1>
+<h1 align="center">Hackaton Fiap - Telemedicina</h1>
 
 <p align="center">
   <a href="#-license">
@@ -22,6 +22,11 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 ## Diagrama
 <div align="center">
   <img src="./paciente.jpeg" alt="paciente" />
+</div>
+
+## Banco de dados
+<div align="center">
+  <img src="./banco.jpeg" alt="banco" />
 </div>
 
 
@@ -54,14 +59,26 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 - valor: o preço da consulta.
 
 
+#### Requisitos não funcionais
+
+- Disponibilidade: está na aws funcionando 24h.
+
+- Escalabilidade: tem loadbalancer gerenciando a aplicação.
+
+- Autenticação spring Security utilizando bearer token.
+
+
 ### Arquitetura 
 <div align="center">
   <img src="./arq.jpeg" alt="Arquitetura" />
 </div>
 
 ### Video de explicação
+- Demonstração dos itens de 1 a 6 e disponibilidade na nuvem
+https://vimeo.com/990827760
 
-https://vimeo.com/907502067
+- Demonstração dde infra e as pipelines
+https://vimeo.com/990828606
 
 ## 📝 License
 
