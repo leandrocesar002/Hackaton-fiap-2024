@@ -77,7 +77,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 - Demonstração dos itens de 1 a 6 e disponibilidade na nuvem
 https://vimeo.com/990827760
 
-- Demonstração dde infra e as pipelines
+- Demonstração de infra e as pipelines
 https://vimeo.com/990828606
 
 ## 📝 License
