@@ -19,7 +19,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 - [DDD (Domain-driven Design)](https://domainlanguage.com/)
 - [Hexagonal Architecture](<https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)>)
 
-## Banco de dados (DER/Postgres)
+## Diagrama
 <div align="center">
   <img src="./paciente.jpeg" alt="paciente" />
 </div>
@@ -28,7 +28,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e conceitos:
 ## DDD (Domain-Driven Design)
 
 <div align="center">
-  <img src="./medico.jpg" alt="medico" />
+  <img src="./medico.jpeg" alt="medico" />
 </div>
 
 ### Dicionário Ubíquo
